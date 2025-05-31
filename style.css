@@ -1,61 +1,16 @@
-body{
-  font-family: arial;
-  margin: 0;
-  background-color: black;
+.apertado{
+  background-color: gray;
   color: white;
+  border-color: lightgrey;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 1px;
 }
 
-header{
-  text-align: center;
-}
-main{
-  text-align: center;
-}
-footer{
+#criar{
   
 }
 
-
-#listaFieldset, #nomeDaLista, #adicionarTarefa{
-  font-size: 17px;
-}
-#listaFieldset{ /*Fieldset*/
-  text-align: center;
-  display: inline-block;
-}
-#nomeDaLista{ /*Legenda fieldset*/
-  font-size: 22px;
-  color: mediumturquoise;
-  border-bottom: steelblue 3px solid;
-  margin-bottom: 10px;
-}
-
-label[for='escreverTarefa']{
+#parar{
   
-}
-#escreverTarefa{ /*Input*/
-  width: 150px;
-  padding: 4.85px 0 2.5px 2px;
-}
-#adicionarTarefa{ /*Botao*/
-  
-}
-
-#lista{
-  margin-top: 12px;
-  background-color: white;
-  color: black;
-  text-align: left;
-}
-
-.feito{
-  color: red;
-  text-decoration: line-through;
-}
-.tarefa{
-  position: relative;
-  bottom: 1px;
-}
-.lista{
-  margin: 2px 0 2px 0;
 }
