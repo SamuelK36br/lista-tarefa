@@ -1,66 +1,27 @@
 // SELETORES:
-const body = document.querySelector('body');
-const h1 = document.querySelector('h1');
-const h2 = document.querySelector('h2');
-const numQuant = document.getElementsByClassName('quantidade');
-const botao = document.getElementsByTagName('button');
+const lista = document.getElementById('lista');
+const input = document.getElementById('escreverTarefa');
+const botao = document.getElementById('adicionarTarefa');
 
-// HEADINGS:
-function paragrafosCriados(){
-    h1.innerHTML='Paragrafos criados: ' + numQuant.length;
-}
-paragrafosCriados();
 
-function criacaoAtiva(){
-    h2.innerHTML='Criacao de paragrafos ativada!';
-    h2.style.color='green';
-}
-function criacaoDesativada(){
-    h2.innerHTML='Criacao de paragrafos desativada!';
-    h2.style.color='red';
-}
-criacaoDesativada();
+botao.onclick=tarefa;
 
-// CRIACAO DO PARAGRAFO:
-function criarParagrafo(){
-    const p = document.createElement('p');
-    p.classList.add('quantidade');
-    p.innerHTML=`Paragrafo Criado! (${numQuant.length + 1}x)`;
-    p.style.color='aqua';
-    body.appendChild(p);
-}
-
-let intervalo = null;
-
-function criar(){
-    if(intervalo === null){
-        criacaoAtiva();
-        intervalo = setInterval(()=>{
-            criarParagrafo();
-            paragrafosCriados();
-        }, 1000);
-    }
-    botaoApertado(1);
-}
-
-function parar(){
-    criacaoDesativada();
-    clearInterval(intervalo);
-    intervalo=null;
-    botaoApertado(2);
-}
-
-// EVENTOS DE CLIQUES DOS BOTOES:
-botao[0].onclick=criar;
-botao[1].onclick=parar;
-
-function botaoApertado(button){
-    if(button === 1){
-        botao[0].classList.add('apertado');
-        botao[1].classList.remove('apertado');
-    }
-    else if (button === 2) {
-        botao[1].classList.add('apertado');
-        botao[0].classList.remove('apertado');
-    }
+let numLista = 0;
+let checkbox = null;
+let div;
+function tarefa() {
+    div = document.createElement('div');
+    div.classList.add('lista');
+    div.setAttribute('id', `lista${numLista++}`);
+    
+    const tarefa = document.createElement('span');
+    tarefa.innerHTML=input.value;
+    tarefa.classList.add('tarefa');
+    
+    checkbox = document.createElement('input');
+    checkbox.type='checkbox';
+    
+    div.appendChild(checkbox);
+    div.appendChild(tarefa);
+    lista.appendChild(div);
 }

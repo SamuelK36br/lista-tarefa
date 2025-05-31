@@ -3,27 +3,35 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='../../modoEscuro.css'>
   <link rel='stylesheet' href='style.css'>
+  <link rel='stylesheet' href='../../modoEscuro.css'>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Paragrafo</title>
+  <title>SITE</title>
 </head>
 <body>
-  <h1>
-    <!--QUANTIDADE DE PARAGRAFOS-->
-  </h1>
-  <h2>
-    <!--CRIACAO ATIVA?-->
-  </h2>
+  <header>
+    <h1>
+      Lista de Tarefas Para Se Fazer (ou Não)
+    </h1>
+  </header>
   
-  
-  <button id="criar">
-    Criar paragrafo
-  </button>
-  
-  <button id="parar">
-    Parar Intervalo
-  </button>
+  <main>
+  <fieldset id="listaFieldset">
+    <legend id='nomeDaLista'>
+      Minha listinha de tarefas!
+    </legend>
+    
+    <label name='' for='escreverTarefa'>
+      Nova Tarefa:
+    </label>
+    <input id='escreverTarefa'>
+    <button id='adicionarTarefa'>
+      Adicionar
+    </button>
+    
+    <div id='lista'></div>
+  </fieldset>
+  </main>
   
   <script src='script.js'></script>
 </body>
